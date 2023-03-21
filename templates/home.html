@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block content%}
+{#<form method = "POST">#}
+{#    {% csrf_token %}#}
+{#    <div style="text-align: center;">#}
+{#        <button class="btn btn-outline-secondary" type="submit" href="{% url 'view' %}">Парсить БМВ</button>#}
+{#    </div>#}
+{#</form>#}
+
+    <form method="POST">
+        {% csrf_token %}
+{#        <div>#}
+{#            <label for="brand">What brand to parse?</label>#}
+{#            <input type="text" name="brand" id="brand" value="BMW" />#}
+{#        </div>#}
+{#        <div>#}
+{#            <button class="btn btn-outline-secondary" type="submit" href="{% url 'view' %}">Parse</button>#}
+{#        </div>#}
+    <fieldset>
+    <legend>Пожалуйста, выберите модель авто для парсинга</legend>
+    <div>
+      <input type="radio" id="brand" name="brand" value="BMW" />
+      <label for="brand">BMW</label>
+
+      <input type="radio" id="brand" name="brand" value="Audi" />
+      <label for="brand">Audi</label>
+
+      <input type="radio" id="brand" name="brand" value="Mercedes" />
+      <label for="brand">Mercedes</label>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary" type="submit" href="{% url 'view' %}">Парсить</button>
+    </div>
+  </fieldset>
+    </form>
+
+{% endblock content%}

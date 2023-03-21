@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <a href="{% url 'home' %}">Вернуться</a>
+    <center><h1>Результаты поиска</h1></center>
+ {% for note in notes %}
+    <center><p>{{ note.title }}<br>
+     {{ note.link }}<br>
+     {{ note.content }}<br>
+        {{ note.price }}</p></center><br>
+ {% endfor %}
+{% endblock content%}
